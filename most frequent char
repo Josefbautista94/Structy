@@ -1,0 +1,33 @@
+const mostFrequentChar = (s) => {
+  // todo
+  // Ok lets see which is the character that appears the most amount of times in the string
+  // Lets convert a string into a counter Hash
+  // Lets traverse throught the string to see which character is the most frequent 
+  // the most frequent would be the one that shows up the most first
+  // So for example the 'o' in potato would be the most frequent because its the fist most frequent character 
+  // Time : 0(n) , Space : 0(n)
+  
+  const counter = {}
+  
+  for( let char of s ){
+    if ( !(char in counter) ){
+      counter[char] = 0
+    }
+    counter[char]++
+  }
+  
+  let mostFreq = null;
+  
+  for( let char of s ){ // Here we are using the original s string to traverse through the hashmap
+    if( mostFreq === null || counter[char] > counter[mostFreq] ){ // You have nothing stored as mostFreq so its automatically going to get replaced if theres something to replace it with
+      mostFreq = char // most Freq is null it will be replaced by the character with the first most occurances
+    }
+    
+  }
+  
+   return mostFreq;
+};
+
+module.exports = {
+  mostFrequentChar,
+};
