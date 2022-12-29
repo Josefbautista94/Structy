@@ -1,0 +1,34 @@
+const uncompress = (s) => {
+  // todo
+  // lets use two different variables that track 2 different indexs
+  // pointer i is going to represent the start of the number portion
+  // pointer j will find the end of any number sequence so keep incrementing j until it finds an alpahbetic character
+  // once you find the number that you need to repeat use a loop to uncompress the character 
+  // slice method would help alot 
+  // the complexity of this Algorithm 
+  // Time and space complexity is 0(nm)
+  
+  const num= '0123456789'
+  let answer = '';
+  let i = 0;
+  let j = 0;
+  
+  while ( j < s.length){
+    if(num.includes(s[j])){
+      j++
+    }
+    else{
+      const nums = Number(s.slice(i,j));
+      for(let i = 0; i < nums; i++){
+        answer += s[j]
+      }
+      j++;
+      i = j;
+    }
+  }
+  return answer;
+};
+
+module.exports = {
+  uncompress,
+};
