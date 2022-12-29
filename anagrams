@@ -1,0 +1,19 @@
+const anagrams = (s1, s2) => {
+  
+  //What i want to do is first to put each string in an array
+  //After lets sort the arrays in alphabetical order
+  //Lets compare the arrays after to see if the arrays have the same letters in the same order by joining them together
+  console.log(s1, s2)
+  let word1 = s1.split("").sort().join("")
+  let word2 = s2.split("").sort().join("")
+  console.log(`This is the first word sorted in order : ${word1}
+  This is the second word sorted in order : ${word2}`)
+  
+  if(word1 == word2){
+    return true
+  }
+  return false;
+};
+module.exports = {
+  anagrams,
+};
