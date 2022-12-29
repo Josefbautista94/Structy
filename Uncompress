@@ -1,0 +1,30 @@
+const uncompress = (s) => {
+// Assigining a variable with a string of integers 
+// Got to Assigin a variable which keeps track of the number
+// Got to assigin a variable that keeps track of the letters
+// A variable to display the answer
+// A while loop to traverse through the string
+// convert the char numbers to actual numbers 
+// create a for loop to expand the string
+// return the answer
+  
+  let numbers = '0123456789'
+  let i = 0;
+  let j = 0;
+  let answer = '';
+  
+  while (j < s.length){
+    if(numbers.includes(s[j])){
+      j += 1
+    }
+    else{
+      let num = Number(s.slice(i,j))
+      for(let count = 0; count < num; count +=1){
+        answer += s[j]
+      }
+      j += 1;
+      i = j;
+    }
+  }
+  
+    return answer;
