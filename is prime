@@ -1,0 +1,17 @@
+const isPrime = (n) => {
+console.log(`A Prime number is a number thats only divisible by 1 and it's self
+This is n : ${n}
+This is is divided by 2 : ${n % 2}`)
+console.log( 5 / 5)
+  
+ if (n < 2) return false;
+  
+  for (let i = 2; i <= Math.sqrt(n); i += 1) {
+    if (n % i === 0) return false;
+  }
+  
+  return true;
+}
+module.exports = {
+  isPrime,
+};
