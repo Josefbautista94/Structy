@@ -1,0 +1,46 @@
+const compress = (s) => {
+  
+  // todo
+  // What I want to do is to compress the characters by placing the amount before the characters
+  // If its a single character we dont want to put that before the character lets just leave the character the way it is.
+  // Basically backwards of what we did in the uncompress problem
+  // Let's use two pointers i and j
+  // Pointer i is going to be the start of a consequtive streak
+  // Pointer j is going to be the end of a streak
+  // I am going to want to count the streak by counting the index length of the streak i just terminated
+  // Lets try j - i
+  // Lets create an output string lets add the number following the character
+  // Once this is done lets have i catch up with j and start the process over again 
+  // Lets try to add one more index(lets do <=)  to take care of the last index because it would fall out of bounds 
+  // Time : 0(n) , Space : 0(n)
+  
+  let i = 0;
+  let j = 0;
+  let streak = 0;
+  let answer = []
+  
+  while( j <= s.length ){
+    if( s[i] === s[j] ){
+      j++
+       }
+    
+    else{
+      streak = j - i;
+      
+       if ( streak == 1 ){
+         answer.push( s[i ])
+        }
+    
+      else{
+      answer.push( streak, s[i] )
+      }
+       i = j; 
+     }
+      }
+ 
+      return answer.join('');
+};
+
+module.exports = {
+  compress,
+};
