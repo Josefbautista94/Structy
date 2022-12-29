@@ -1,0 +1,14 @@
+const maxValue = (nums) => {
+  // todo
+  
+  const sortedArr = nums.sort( function ( a , b ){
+     return a - b;
+  } );
+  
+    return sortedArr[ sortedArr.length-1 ]
+  
+};
+
+module.exports = {
+  maxValue,
+};
