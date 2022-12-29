@@ -1,0 +1,38 @@
+const compress = (s) => {
+  //I'm going to want to take consequtive occurencs of characters and count how many letters there is and put the number infront of the character(compress).
+  // I have to create two pointers to keep track of the length of the characters.
+  // have them meet at the same character, I will represent the begginning of a consequtive streak and will be the end of a consequtive streak.
+  // Repeat the process for each letter
+  // j - i to see the distance between the first instance of a letter and the end.
+  // to add the letter after the number just refrence i because its the begginning of the character
+  
+  let i = 0;
+  let j = 0;
+  let counter = 0;
+  let answer = [];
+  
+  while( j <= s.length ){
+    if(s[i] === s[j]){
+    j+=1
+
+    }
+    else{
+      counter = j -i;
+      
+        if(counter == 1){
+        answer.push(s[i])
+      }
+      else{
+      answer.push(counter , s[i])
+      }
+      i = j;
+      
+    }
+    
+  }
+  return answer.join("");
+};
+
+module.exports = {
+  compress,
+};
