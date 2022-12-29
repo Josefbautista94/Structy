@@ -1,0 +1,45 @@
+const anagrams = (s1, s2) => {
+  // todo
+  // This time lets do it Alvin's way
+  // Lets create a Hashmap containing the amount of characters in the strings
+  // Lets compare them to see if they have the same characters and the same amount 
+  // Note : Something that you have to worry about in javascript is that you cant create a simillar count object for s1 and s2 and just then compare them with equality
+  // ^^ Because in JS when you're using equality for objects you're basically checking if the have the same reference in memory and not if it contains the same keys and values
+  // Instead let itterate through s2 and then reduce the count we creat in the object
+  // After decrementing through every character we see in s2 your count should only have 0'see
+  // Time : 0( n + m ) , Space : 0 ( n + m )
+  
+
+  const count = {};
+  
+  for( let char of s1 ){
+    if( !( char in count ) ){ // This is initializing the char into the count object if its the first time seeing the character
+  // The line above is the same as saying (key in obj) BUT were doing the opposite cause of the '!'
+      count[char] = 0; // This is starting the count of char at 0, We want the value of this object to be numbers
+    }
+    
+   count[char]++  //This increments the count
+  }
+  
+  for( let char of s2 ){ // We are decrementing with this
+    if( char in count ){  // For Edgecases if char of s2 is in the original count it decrements it
+    count[char]--
+    }
+    else{ // Entering this else statement means that a character in s2 isn't in count(No longer anagrams)
+      return false;
+    }
+  }
+  
+  for( let char in count ){ // In loops in objects iterates the keys in the objects aka for here the characters
+    if(count[char]!== 0){ // if count isnt 0 it isnt an anagram
+      return false
+    }
+    
+  }
+  
+  return true; // its an anagram if its true
+};
+
+module.exports = {
+  anagrams,
+};
