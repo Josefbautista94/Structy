@@ -1,0 +1,26 @@
+const reverseList = (head) => {
+  // todo
+  // Lets reverse the order of the nodes in this link list
+  // A > B > C > D to D > C > B > A
+  
+  
+let current = head; // our pointer
+  let previous = null; // our previous pointer would equal null
+  
+  while(current !== null){
+
+    let next = current.next;
+
+    current.next = previous; // We're making current point to null and so on and so on
+
+    previous = current
+
+    current = next
+  }
+  
+  return previous
+};
+
+
+
+
