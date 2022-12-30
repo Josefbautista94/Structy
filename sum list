@@ -1,0 +1,23 @@
+ const sumList = (head) => {
+  // todo
+  // We want to return the total sum of the value in a link list
+  // Lets traverse an order through the link list 
+  // Head => tail
+  // We can stop after the link list hits a null by creating a while loop
+  // When we hit null we can return 0;
+  // 0(1)
+  
+  let current = head // Lets keep on updating the variable over time
+  let sum = 0; //Lets add the sum here
+  
+  while(current !== null){ // if it isnt equal to null its a node
+    sum += current.val // this adds everything in the link list 
+    current = current.next; // This steps throught the link list in sequence
+  }
+  
+  // you exit the while loop when you return you total sum
+  
+  
+  return sum;
+};
+
