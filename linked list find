@@ -1,0 +1,23 @@
+const linkedListFind = (head, target) => {
+  // todo
+  // What we want to do is return true or false if the target value is contained within the link list
+  
+  let current = head // where we start
+  let newArr = [] // array :^)
+  
+  while (current !== null){ // While current isn't equal to null lets keep on going!
+    newArr.push(current.val) // Lets push the val into an array
+    current = current.next;  // Lets keep it moving
+  }
+
+  if(newArr.includes(target)){ // This is to see if the target is in the array
+    return true
+  }
+  return false; // lets return false if it exits the if statment 
+};
+
+
+
+
+
+
